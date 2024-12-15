@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Citate Motivaționale | EduPlanner</title>
+<!-- Inclus Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Link către fișierul CSS extern -->
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Banner-ul mov -->
+        <div class="row banner text-white py-3">
+            <div class="col d-flex justify-content-center align-items-center">
+                <h1>EduPlanner</h1>
+            </div>
+        </div>
+        <div class="row vh-100">
+            <!-- Partea stângă -->
+            <div class="col-2 sidebar position-relative sidebar">
+                <div class="d-flex justify-content-center">
+                    <h2 class="p-3">Optiuni</h2>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-light flex-column">
+                    <ul class="navbar-nav flex-column col-11">
+                        <li class="nav-item"><a
+                            class="nav-link border border-dark text-center mt-2 mb-2"
+                            href="index.html" id="adaugaButton">Adaugă Sarcina</a></li>
+                        <li class="nav-item"><a
+                            class="nav-link border border-dark text-center mt-2 mb-2"
+                            href="citatemotivationale.html">Citate motivaționale</a></li>
+                        <li class="nav-item"><a
+                            class="nav-link border border-dark text-center mt-2 mb-2"
+                            href="dateimportante.html">Date importante</a></li>
+                        <li class="nav-item"><a
+                            class="nav-link border border-dark text-center mt-2 mb-2"
+                            href="sfaturi.html">Tips and Tricks</a></li>
+                    </ul>
+                </nav>
+                <!-- Sageata pentru inchidere/afisare -->
+                <button id="toggleSidebar" class="btn btn-light toggle-btn" style="right: -20px;">
+                    <span id="toggleIcon">&larr;</span>
+                </button>
+            </div>
+            <!-- Partea dreaptă - Conținutul paginii -->
+            <div class="col-10 content-wrapper p-3">
+                <div class="d-flex justify-content-center">
+                    <h2>Citate Motivaționale</h2>
+                </div>
+
+                <!-- Secțiunea de citate -->
+                <div id="citateList" class="mt-4 row">
+                    <!-- Exemplu de citate -->
+                    <div class="col-12 col-md-4">
+                        <div class="citat-box">
+                            <h5>„Succesul vine din perseverență”(Mahatma Gandhi)</h5>
+                            <div class="citat-text">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="citat-box">
+                            <h5>„Fii schimbarea pe care vrei să o vezi în lume”(Ralph Waldo Emerson)</h5>
+                            <div class="citat-text">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="citat-box">
+                            <h5>„Învățătura este lumina care îndrumă pașii unui om pe drumul succesului.”(Confucius)</h5>
+                            <div class="citat-text">
+                                
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-12 col-md-4">
+                        <div class="citat-box">
+                            <h5>„Călătoria este mai importantă decât destinația”(Confucius)</h5>
+                            <div class="citat-text">
+                                
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-12 col-md-4">
+                        <div class="citat-box">
+                            <h5>„Cei care învață din greșelile lor și din experiențele altora sunt cei care vor reuși.”(Winston Churchill)</h5>
+                            <div class="citat-text">
+                                
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-12 col-md-4">
+                        <div class="citat-box">
+                            <h5>„Învățătura este cheia succesului și cheia deschiderii ușilor în viață.”(Albert Einstein)</h5>
+                            <div class="citat-text">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripturi pentru funcționalitatea Sidebar -->
+    <script src="functii.js"></script>
+    
+</body>
+</html>

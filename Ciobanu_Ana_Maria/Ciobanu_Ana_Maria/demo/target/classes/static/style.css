@@ -1,0 +1,192 @@
+/* Stil pentru banner */
+.banner {
+    background-color: #A718FF; /* Culoarea mov */
+    color: white; /* Text alb pentru contrast */
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Stil pentru bara laterală */
+.sidebar {
+    background-color: rgba(167, 24, 255, 0.04); /* Mov cu opacitate de 4% */
+    height: 100vh;
+}
+
+/* Stil pentru butonul săgeată */
+.toggle-btn {
+    background-color: white; /* Fundal alb implicit */
+
+    border-radius: 8px; /* Colțuri ușor rotunjite */
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Tranziții line */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Umbră subtilă */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Dimensiuni fixe */
+    height: 40px;
+}
+
+.toggle-btn:hover {
+    background-color: #A718FF; /* Fundal mov la hover */
+    color: white; /* Text alb pentru contrast */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Umbră mai accentuată */
+}
+
+input.form-control, textarea.form-control {
+    background-color: rgba(167, 24, 255, 0.04); /* Mov transparent similar cu sidebar */
+    border: 1px solid rgba(167, 24, 255, 0.2); /* Border subtire de aceeași culoare */
+    color: #333; /* Culoare text pentru a fi vizibil */
+}
+
+input.form-control:focus, textarea.form-control:focus {
+    background-color: rgba(167, 24, 255, 0.1); /* Culoare mai puternică la focus */
+    border-color: #A718FF; /* Bordura devine mov intens */
+    box-shadow: 0 0 0 0.2rem rgba(167, 24, 255, 0.25); /* Umbră albastră la focus */
+}
+
+input[type="submit"] {
+    background-color: #A718FF; /* Culoarea mov ca la banner */
+    color: white; /* Text alb pentru contrast */
+    font-weight: bold;
+    border: none; /* Fără bordură */
+    padding: 10px 20px; /* Padding pentru un buton mai mare */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Tranziție lină */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Umbră subtilă */
+    border-radius: 8px; /* Colțuri rotunjite */
+  
+}
+
+input[type="submit"]:hover {
+    background-color: #8F1EFF; /* Culoare mai deschisă la hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Umbră mai accentuată */
+}
+
+/* Când bara laterală este vizibilă */
+.content-wrapper {
+    padding-left: 16px; /* Spațiu între marginea stângă și conținut */
+}
+
+/*citatemotivationale.html */
+/* Stiluri pentru banner */
+.bg-purple {
+    background-color: #6a0dad; /* Mov intens */
+}
+
+
+
+/* Stiluri pentru citate */
+.citat-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.citat-box:hover {
+    transform: scale(1.05);
+}
+
+.citat-box .citat-text {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    overflow: auto;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.citat-box:hover .citat-text {
+    display: block;
+}
+
+.citat-box h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #6a0dad;
+    margin-bottom: 10px;
+}
+
+/* Responsivitate */
+@media (max-width: 768px) {
+    .citat-box {
+        margin-bottom: 20px;
+    }
+}
+
+/* Efecte pentru sidebar */
+.toggle-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Dimensiune fixă pentru box-urile cu citate */
+.citat-box {
+    height: 200px; /* Înălțimea standard a box-ului */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Împinge conținutul în sus și în jos pentru a ocupa tot spațiul */
+}
+
+/* Ascunde titlul când citatul este vizibil */
+.citat-box .citat-text {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    overflow: auto;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.citat-box:hover .citat-text {
+    display: block; 
+    background-color: #A718FF;
+    
+    
+}
+.citat-box h5:hover {
+	color: white;
+}
+
+.citat-box h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #6a0dad;
+    margin-bottom: 10px;
+    z-index: 2; /* Se află deasupra citatului */
+}
+.citat-box {
+    height: 200px; /* Înălțimea standard a box-ului */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Aliniază textul pe verticală */
+    align-items: center; /* Aliniază textul pe orizontală */
+    text-align: center; /* Asigură că textul este centrat orizontal */
+}
+
+

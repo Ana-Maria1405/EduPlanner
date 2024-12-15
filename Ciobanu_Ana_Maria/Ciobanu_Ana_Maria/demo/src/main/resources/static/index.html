@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPlanner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Banner-ul mov -->
+        <div class="row banner text-white py-3">
+            <div class="col d-flex justify-content-center align-items-center">
+                <h1>EduPlanner</h1>
+            </div>
+        </div>
+        <div class="row vh-100">
+            <!-- Partea stângă -->
+            <div class="col-2 sidebar position-relative sidebar">
+                <div class="d-flex justify-content-center">
+                    <h2 class="p-3">Optiuni</h2>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-light flex-column">
+                    <ul class="navbar-nav flex-column col-11">
+                        <li class="nav-item"><a class="nav-link border border-dark text-center mt-2 mb-2" href="#" id="adaugaButton">Adaugă Sarcina</a></li>
+                        <li class="nav-item"><a class="nav-link border border-dark text-center mt-2 mb-2" href="citatemotivationale.html">Citate motivaționale</a></li>
+                        <li class="nav-item"><a class="nav-link border border-dark text-center mt-2 mb-2" href="dateimportante.html">Date importante</a></li>
+                        <li class="nav-item"><a class="nav-link border border-dark text-center mt-2 mb-2" href="sfaturi.html">Tips and Tricks</a></li>
+                    </ul>
+                </nav>
+                <!-- Sageata pentru inchidere/afisare -->
+                <button id="toggleSidebar" class="btn btn-light toggle-btn" style="right: -20px;">
+                    <span id="toggleIcon">&larr;</span>
+                </button>
+            </div>
+            <!-- Partea dreaptă -->
+            <div class="col-10 content-wrapper p-3">
+                <div class="d-flex justify-content-center">
+                    <h2>Program</h2>
+                </div>
+                <table id="sarciniTable" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Titlu</th>
+                            <th>Descriere</th>
+                            <th>Data</th>
+                            <th>Ora</th>
+                            <th>Gratitudine</th> <!-- Noile coloane -->
+                            <th>Îmbunătățiri</th> <!-- Noile coloane -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+                <div id="sectiuneAdauga" class="d-none mt-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>Adaugă o Sarcină</h3>
+                            <form action="/adauga-sarcina" method="POST">
+                                <div class="mb-3">
+                                    <label for="taskTitle" class="form-label">Introdu sarcina</label>
+                                    <input type="text" class="form-control" id="taskTitle" name="titlu" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="taskDescription" class="form-label">Descriere</label>
+                                    <textarea class="form-control" id="taskDescription" name="descriere" rows="3" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="taskDate" class="form-label">Data și Ora</label>
+                                    <div class="d-flex">
+                                        <input type="date" class="form-control" id="taskDate" name="dataSpecifica" required>
+                                        <input type="time" class="form-control ms-2" id="taskTime" name="oraSpecifica" required>
+                                    </div>
+                                </div>
+                                <!-- Noua secțiune 1 -->
+                                <div class="mb-3">
+                                    <label for="gratitude" class="form-label">Lucruri pentru care sunt recunoscător</label>
+                                    <textarea class="form-control" id="gratitude" name="gratitudine" rows="3" required></textarea>
+                                </div>
+                                <!-- Noua secțiune 2 -->
+                                <div class="mb-3">
+                                    <label for="improvement" class="form-label">Ce pot îmbunătăți</label>
+                                    <textarea class="form-control" id="improvement" name="imbunatatiri" rows="3" required></textarea>
+                                </div>
+                                <input type="submit" class="btn btn-primary" value="Adaugă Sarcină" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="functii.js"></script>
+</body>
+</html>

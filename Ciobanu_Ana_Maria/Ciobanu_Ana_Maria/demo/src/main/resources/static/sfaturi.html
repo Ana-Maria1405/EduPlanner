@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips and Tricks - EduPlanner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    
+    <style>
+        /* Stil pentru banner (fără colțuri rotunjite) */
+        .banner {
+            background-color: #A718FF; /* Culoarea mov */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            /* Am eliminat border-radius pentru a nu mai avea colțuri rotunjite */
+        }
+
+        /* Stil pentru secțiuni */
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #6a0dad;
+            margin-bottom: 20px;
+        }
+
+        .tips-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tips-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .tips-card .card-header {
+            background-color: #A718FF;
+            color: white;
+            font-weight: bold;
+        }
+
+        .tips-card .card-body {
+            padding: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Stil pentru lista de sfaturi */
+        .tips-list {
+            margin-top: 30px;
+        }
+
+        .tip-item {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .tip-item i {
+            color: #A718FF;
+            margin-right: 10px;
+        }
+
+        .tip-item a {
+            text-decoration: none;
+            color: #A718FF;
+        }
+
+        /* Responsivitate */
+        @media (max-width: 768px) {
+            .banner {
+                font-size: 22px;
+                padding: 15px;
+            }
+
+            .tips-card .card-body {
+                font-size: 1rem;
+            }
+
+            .tip-item {
+                font-size: 1rem;
+            }
+
+            .container-fluid {
+                margin-left: 0;
+            }
+        }
+
+        /* Stil pentru sidebar */
+        .sidebar {
+            background-color: rgba(167, 24, 255, 0.04);
+            height: 100vh;
+            position: fixed;
+            width: 250px;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .sidebar a {
+            color: #6a0dad;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .sidebar a:hover {
+            color: #A718FF;
+        }
+
+        /* Buton săgeată verticală în mijloc */
+        .toggle-btn {
+            background-color: white;
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+        }
+
+        .toggle-btn:hover {
+            background-color: #A718FF;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar-content {
+            padding: 20px;
+        }
+
+        /* Stil pentru a muta conținutul lângă sidebar */
+        
+        /* Adăugăm mai multe margini pentru a împărți bine conținutul */
+        .main-content {
+            padding-left: 20px;
+        }
+
+        /* Am adăugat margine pe partea dreaptă pentru carduri și secțiuni */
+        .section-title,
+        .tips-list {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+	<div class="container-fluid">
+        <!-- Banner-ul mov fără colțuri rotunjite -->
+        <div class="row banner text-white py-3">
+            <div class="col d-flex justify-content-center align-items-center">
+                <h1>EduPlanner</h1>
+            </div>
+        </div>
+    <div class="d-flex">
+        <!-- Partea stângă (sidebar) -->
+        <div class="col-2 sidebar position-relative">
+            <div class="d-flex justify-content-center">
+                <h2 class="p-3">Optiuni</h2>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light flex-column">
+                <ul class="navbar-nav flex-column col-11">
+                    <li class="nav-item"><a class="nav-link border border-dark text-center mt-2 mb-2" href="index.html" id="adaugaButton">Adaugă Sarcina</a></li>
+                    <li class="nav-item"><a class="nav-link border border-dark text-center mt-2 mb-2" href="citatemotivationale.html">Citate motivaționale</a></li>
+                    <li class="nav-item"><a class="nav-link border border-dark text-center mt-2 mb-2" href="dateimportante.html">Date importante</a></li>
+                    <li class="nav-item"><a class="nav-link border border-dark text-center mt-2 mb-2" href="sfaturi.html">Tips and Tricks</a></li>
+                </ul>
+            </nav>
+            <!-- Sageata pentru inchidere/afisare -->
+            <button id="toggleSidebar" class="btn btn-light toggle-btn" style="right: -20px;">
+                <span id="toggleIcon">&larr;</span>
+            </button>
+        </div>
+
+        <!-- Conținutul principal (lângă sidebar) -->
+        <div class="container-fluid" style="margin-left: 250px;">
+
+            <!-- Secțiuni de sfaturi -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">Sfaturi pentru o gestionare eficientă a timpului</div>
+                </div>
+
+                <!-- Carduri cu sfaturi -->
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card tips-card">
+                        <div class="card-header">Prioritizează-ți sarcinile</div>
+                        <div class="card-body">
+                            <p>Începe cu sarcinile cele mai importante și urgente. Folosește tehnica Eisenhower pentru a le clasifica și a decide ce trebuie făcut imediat și ce poate fi amânat.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card tips-card">
+                        <div class="card-header">Tehnica Pomodoro</div>
+                        <div class="card-body">
+                            <p>Lucrează concentrat timp de 25 de minute, urmat de o pauză de 5 minute. După 4 sesiuni Pomodoro, ia o pauză mai lungă de 20-30 de minute.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card tips-card">
+                        <div class="card-header">Împărțirea sarcinilor în părți mici</div>
+                        <div class="card-body">
+                            <p>În loc să te simți copleșit de o sarcină mare, împarte-o în mai multe sub-sarcini mai mici și mai ușor de gestionat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista de sfaturi -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">Alte Sfaturi Utile</div>
+                    <ul class="list-unstyled tips-list">
+                        <li class="tip-item"><i class="fas fa-check-circle"></i> Folosește o aplicație de gestionare a sarcinilor pentru a-ți organiza activitățile zilnice. <a href="#">Mai multe detalii</a></li>
+                        <li class="tip-item"><i class="fas fa-check-circle"></i> Evită multitasking-ul, concentrează-te pe o singură sarcină pentru a fi mai productiv. <a href="#">Afla mai multe</a></li>
+                        <li class="tip-item"><i class="fas fa-check-circle"></i> Setează-ți obiective clare și monitorizează progresul. <a href="#">Învață cum</a></li>
+                        <li class="tip-item"><i class="fas fa-check-circle"></i> Adoptă o rutină de studiu constantă pentru a-ți îmbunătăți performanța pe termen lung. <a href="#">Descoperă mai multe</a></li>
+                        <li class="tip-item"><i class="fas fa-check-circle"></i> Fă exerciții fizice regulat pentru a-ți îmbunătăți concentrarea și energia. <a href="#">Află mai multe</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
